@@ -54,7 +54,7 @@ public class MailValidation {
 		}
 		System.out.println("Enter Phone number: ");
 		String PhoneNumber = scan.next();
-		flag = Pattern.matches("( )?[789]{1}[0-9]{9}", PhoneNumber);
+		flag = Pattern.matches("[0-9]{2} [789]{1}[0-9]{9}", PhoneNumber);
 		System.out.println(flag);
 		if (flag){
 			System.out.println("Phone number is valid :"+ PhoneNumber);
