@@ -32,5 +32,25 @@ public class MailValidation {
 				map.put("FirstName", FirstName);
 			}
 		}
+		System.out.println("Enter Last Name: ");
+		String LastName = scan.next();
+		flag = Pattern.matches("[A-Z]{1}[a-z]{2,}", LastName);
+		if (flag){
+			System.out.println("Last name is valid :"+ LastName);
+			map.put(LastName, "LastName");
+		}
+		else{			
+			System.out.println("Wrong input, TRY AGAIN");
+			LastName = scan.next();
+			flag = Pattern.matches("[A-Z]{1}[a-z]{2,}", LastName);
+			if (flag == false) {
+				System.out.println("Wrong input");
+				return;
+			}
+			else {
+				System.out.println("Correct And Updated");
+				map.put("LastName", LastName);
+			}
+		}
 	}
 }
