@@ -52,5 +52,26 @@ public class MailValidation {
 				map.put("LastName", LastName);
 			}
 		}
+		System.out.println("Enter Phone number: ");
+		String PhoneNumber = scan.next();
+		flag = Pattern.matches("( )?[789]{1}[0-9]{9}", PhoneNumber);
+		System.out.println(flag);
+		if (flag){
+			System.out.println("Phone number is valid :"+ PhoneNumber);
+			map.put("PhoneNumber", PhoneNumber);
+		}
+		else{			
+			System.out.println("Wrong input, TRY AGAIN");
+			PhoneNumber = scan.next();
+			flag = Pattern.matches("( )?[789]{1}[0-9]{9}", PhoneNumber);
+			if (flag == false) {
+				System.out.println("Wrong input");
+				return;
+			}
+			else {
+				System.out.println("Correct And Updated");
+				map.put("PhoneNumber", PhoneNumber);
+			}
+		}
 	}
 }
