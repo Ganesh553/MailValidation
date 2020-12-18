@@ -73,5 +73,47 @@ public class MailValidation {
 				map.put("PhoneNumber", PhoneNumber);
 			}
 		}
+		System.out.println("Enter Mail_id: ");
+		String Mail = scan.next();
+		flag = Pattern.matches("[a-z0-9]{3,6}[@]{1}[a-z]{5}[.]{1}[a-z]{3}", Mail);
+		System.out.println(flag);
+		if (flag){
+			System.out.println("First name is valid :"+ Mail);
+			map.put("Mail", Mail);
+		}
+		else{			
+			System.out.println("Wrong input, TRY AGAIN");
+			Mail = scan.next();
+			flag = Pattern.matches("[a-z0-9]{3,6}[@]{1}[a-z]{5}[.]{1}[a-z]{3}", Mail);
+			if (flag == false) {
+				System.out.println("Wrong input");
+				return;
+			}
+			else {
+				System.out.println("Correct And Updated");
+				map.put("Mail", Mail);
+			}
+		}
+		System.out.println("Enter Password");
+		String Password = scan.next();
+		flag = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()]).{8,}$", Password);
+		if (flag){
+			System.out.println("Password is valid :"+ Password);
+			map.put("Password", Password);
+		}
+		else{			
+			System.out.println("Wrong input, TRY AGAIN");
+			Password = scan.next();
+			flag = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()]).{8,}$", Password);
+			if (flag == false) {
+				System.out.println("Wrong input");
+				return;
+			}
+			else {
+				System.out.println("Correct And Updated");
+				map.put("Password", Password);
+			}
+		}
+		System.out.println(map);
 	}
 }
