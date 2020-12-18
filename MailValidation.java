@@ -63,7 +63,7 @@ public class MailValidation {
 		else{			
 			System.out.println("Wrong input, TRY AGAIN");
 			PhoneNumber = scan.next();
-			flag = Pattern.matches("( )?[789]{1}[0-9]{9}", PhoneNumber);
+			flag = Pattern.matches("[0-9]{2} [789]{1}[0-9]{9}", PhoneNumber);
 			if (flag == false) {
 				System.out.println("Wrong input");
 				return;
