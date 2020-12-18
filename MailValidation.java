@@ -114,8 +114,6 @@ public class MailValidation {
 				map.put("Password", Password);
 			}
 		}
-
 		System.out.println(map);
-
 	}
 }
